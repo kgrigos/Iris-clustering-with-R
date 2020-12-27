@@ -1,0 +1,9 @@
+iris
+Iris.features=iris
+Iris.features$Species<-NULL
+View(Iris.features)
+results<-kmeans(Iris.features,3)
+results
+results$size
+table(iris$Species,results$cluster)
+plot(iris[c("Petal.Length","Petal.Width")],col=results$cluster)
